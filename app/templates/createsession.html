@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create Session</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="static/css/jackie (updated).css" type="text/css" rel="stylesheet" >
+
+  </head>
+
+  <body>
+    {% extends "base.html" %}
+
+    {% block content %}
+    <h1>Create A Session For Your Patient</h1>
+    <div class="panel panel-primary center" style="width: 35%">
+      <div class="panel-body">
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.therapist_id.label }}<br>
+                {{ form.therapist_id(size=32) }}<br>
+                {% for error in form.therapist_id.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.patient_id.label }}<br>
+                {{ form.patient_id(size=32) }}<br>
+                {% for error in form.patient_id.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.intervention_id.label }}<br>
+                {{ form.intervention_id(size=32) }}<br>
+                {% for error in form.intervention_id.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.session_number.label }}<br>
+                {{ form.session_number(size=32) }}<br>
+                {% for error in form.session_number.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.gametype.label }}<br>
+                {{ form.gametype(size=32) }}<br>
+                {% for error in form.gametype.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.date_started.label }}<br>
+                {{ form.date_started(size=32) }}<br>
+                {% for error in form.date_started.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+          </form>
+      {% endblock %}
+        </div>
+      </div>
+  </body>
+</html>

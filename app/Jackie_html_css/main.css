@@ -1,0 +1,87 @@
+body{
+/*	margin: 0; /*margin used to shift the page from the left to the right*/
+	padding: 50; 
+	background-color: lightblue;
+	text-align: center;
+	font-family: courier;
+}
+
+#hypers li {
+/*	display: block; */
+	background-color: slateblue;
+	font-size: 60px;
+	height: 70px;     /* height of the slateblue box */
+	width: 500px;      /* width of the slateblue box */
+	position: center;  /* keeps words centered */
+	margin: 100px 130px;      /* margin50% for the gaps inbetween the tabs */
+	margin-top: 100px; /* moves the margin for the top tabs up */
+}
+
+#hypers li a {
+	text-decoration: none;  /* removes the underline under for the links */
+	/*list-style-type:none removes only the bullet points but not underline.*/
+	color: black;
+}
+
+#top_hypers ul {
+	text-align: center;   /* keeps the tabs in the center */
+	margin-left: auto;
+	margin-right: auto;
+	width:800px;
+}
+
+#top_hypers li:hover { /* so weird, if there is a space between li:" then the boarders will appear around the word instead
+                         and the width and height which was applyed will not work*/
+	font-weight: bold;
+	width: 500px;
+	height: 70px;
+	border: 5px solid black;
+}
+
+.center {
+	resize: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	height: 100%;
+	border: 10px solid white;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 50 4px;
+}
+
+.column img {
+	border: 10px solid black;
+	margin-top: 10px;
+	vertical-align: center;
+	width: auto;
+	height: 80%;
+}
+
+#auto {
+	width:1000px;
+	height: 0em;
+	padding: 5em 10em 10em 10em;
+	border: 5px solid black;
+}
+
+#auto {
+	overflow: auto;
+}
+
+.column1 img {
+	border: 10px solid black;
+	margin-top: 100px;
+	margin-left: 400px;
+	width: auto;
+	height: 70%;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	}

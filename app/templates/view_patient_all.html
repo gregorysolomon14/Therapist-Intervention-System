@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- attributes are hard-coded, not read from DB -->
+    <!-- if DB design changes, this template needs to change, too -->
+    <head>
+        <link href="static/css/jackie (updated).css" type="text/css" rel="stylesheet" >
+    <style>
+    #patientTable td, #patientTable th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+  }
+
+    #patientTable tr:nth-child(even){background-color: #92c7d8;}
+
+    #patientTable tr:hover {background-color: #c7c7c7;}
+
+    #patientTable th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #6a5acd;
+      color: white;
+    </style>
+    </head>
+    <table id="patientTable", align ="center">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+    </tr>
+    {% for patient in patients %}
+        <tr>
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.fname }}</td>
+            <td>{{ patient.lname }}</td>
+            <td>{{ patient.username }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

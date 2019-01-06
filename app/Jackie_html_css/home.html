@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <title align="center">Your Patient List</title>
+    <link href="main.css" type="text/css" rel="stylesheet" >
+  </head>
+  <body>
+	<h1>Welcome, {{current_user.username}}!</h1>
+	<h2>To start assigning an intervention, please select a student that you would like to work with:</h2>
+	<div id = "top_hypers">
+		<ul id ="hypers" style = "list-style-type:none">
+			<li><a href="patient1.html">[Patient 1]</a></li>
+			<li><a href="patient2.html">[Patient 2]</a></li>
+			<li><a href="patient3.html">[Patient 3]</a></li>
+		</ul>
+	</div>
+  </body>
+{% endblock %}

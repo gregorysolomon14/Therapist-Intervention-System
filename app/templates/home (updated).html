@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <title align="center">Your Patient List</title>
+    <link href="static/css/jackie (updated).css" type="text/css" rel="stylesheet" >
+  </head>
+  <body>
+	<h1>Welcome, {{current_user.fname}}!</h1>
+	<div id = "top_hypers">
+		<ul id ="hypers" style = "list-style-type:none">
+			<li><a href="{{ url_for('assign', username=current_user.username) }}">Assign Intervention</a></li>
+			<li><a href="{{ url_for('view_patient_all')}}">View Patients</a></li>
+			<li><a href="{{ url_for('register_patient')}}">Register Patient</a></li>
+      <li><a href="{{ url_for('createsession')}}">Create Session</a></li>
+      <li><a href="{{ url_for('sessionmanager')}}">Session Manager</a></li>
+		</ul>
+	</div>
+  </body>{% endblock %}

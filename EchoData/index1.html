@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    Please fill out information <br />
+    <form id ="form" name="form" method="post"
+     action="output1.php">
+      FirstName   : <input name="firstname" type="text" id="firstname" /> <br />
+      LastName    : <input name="lastname"  type="text" id="lastname" /> <br />
+      Birthday    : <input name="birthday"  type="date" id="birthday" /><br />
+      Email       : <input name="email"     type="text" id="email" /> <br />
+
+
+      <br />
+
+      Gender  : <label><input type ="radio" name="gender" id="gender_0" value="male" /> Male </label>
+              <label><input type ="radio" name="gender" id="gender_1" value="female" /> Female </label> <br />
+    <br />
+
+    Ethnicity: <select name="ethnicity" id="select">
+          <optgroup title="Ethnicity">
+          <option value="Blank"> </option>
+          <option value="Non-Hispanic White">Non-Hispanic White</option>
+          <option value="Non-White">Non-White</option>
+          <option value="African-American">African_American</option>
+          <option value="Hispanic">Hispanic</option>
+          <option value="Asian-PacificIslander">Asian/PacificIslander</option>
+
+        </optgroup>
+    </select>
+    <br />
+
+      OtherInfo   : <input name="otherinfo" type="text" id="otherinfo" /><br />
+
+    <input type = "submit" name="button" id="button" value= "submit" />
+    <input type = "reset" name="reset" id="reset" value= "reset from" />
+
+    </form>
+  </body>
+</html>

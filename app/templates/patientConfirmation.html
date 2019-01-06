@@ -1,0 +1,21 @@
+<!--{% extends "base.html" %}
+
+{% block content %} -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Confirmation Page</title>
+		<link href="jackie.css" type="text/css" rel="stylesheet" >
+	</head>
+	<body>
+		<h1>Congratulations! You successfully registered your patient.</h1>
+		<h2>Here is the information for the registered patient:</h2>
+		<?php
+			$content = file_get_contents($register_patient);
+			echo $content;
+		?>
+	</body>
+</html>
+
+<!--{% endblock %}-->

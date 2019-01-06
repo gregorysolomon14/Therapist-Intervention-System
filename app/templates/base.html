@@ -1,0 +1,47 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Intervention</title>
+        {% else %}
+        <title>Welcome to Intervention</title>
+        {% endif %}
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:700" rel="stylesheet">
+
+        <style>
+  body {
+    font-family: 'Quicksand', serif;
+    font-size: 16px;
+  }
+</style>
+
+    </head>
+    <body>
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+            Intervention:
+            <a style="color: powderblue;" href="{{ url_for('home') }}">Home &nbsp;</a>  <!-- &nbsp; just mean spaceing -->
+            {% if current_user.is_anonymous %}
+            <a style="color: powderblue;" href="{{ url_for('login') }}">Login &nbsp;</a>
+            {% else %}
+                <!-- We're currently not providing a profile page for a therapist. -->
+            <!-- a href="{{ url_for('user', username=current_user.username) }}">Profile</a -->
+            <a style="color: powderblue;" href="{{ url_for('assign', username=current_user.username) }}">Assign an Intervention &nbsp;</a>
+            <a style="color: powderblue;" href="{{ url_for('sessionmanager', username=current_user.username) }}">Session Manager &nbsp;</a>
+            <a style="color: powderblue;" href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
+        </div>
+      </div>
+
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

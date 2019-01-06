@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link href="static/css/jackie (updated).css" type="text/css" rel="stylesheet">
+
+  </head>
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1><span style="text-decoration: underline;">Assign an Intervention</span></h1>
+
+    <body>
+
+      <div class="panel panel-primary center" style="width: 25%">
+          <div class="panel-body">
+            <h4 style="color:Tomato;">Select user to map to account:</h4>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            <h2>{{ form.username.label }}</h2>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        </br>
+        <p>
+            <h4 style="color:Tomato;">  Please enter the name of your desired Intervention Session: </h4>
+            <h2>{{ form.name.label }}</h2>
+            {{ form.name(size=32) }}<br>
+            {% for error in form.name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+  </div>
+    </div>
+    </body>
+{% endblock %}

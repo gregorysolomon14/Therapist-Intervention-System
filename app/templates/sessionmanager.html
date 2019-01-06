@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <link href="static/css/jackie (updated).css" type="text/css" rel="stylesheet" >
+    <style>
+    #sessionTable td, #sessionTable th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+  }
+
+    #sessionTable tr:nth-child(even){background-color: #92c7d8;}
+
+    #sessionTable tr:hover {background-color: #c7c7c7;}
+
+    #sessionTable th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #6a5acd;
+      color: white;
+    </style>
+</head>
+<table id="sessionTable", align = "center">
+<tr>
+    <th>SessionID</th>
+    <th>InterventionName</th>
+    <th>SessionNumber</th>
+    <th>Date</th>
+</tr>
+    {% for session in sessionview %}
+<tr>
+        <td>{{ session.session_id }}</td>
+        <td>{{ session.intervention_id }}</td>
+        <td>{{ session.session_number }}</td>
+        <td>{{ session.date_started }}</td>
+</tr>
+{%  endfor %}
+</table>
+{% endblock %}
